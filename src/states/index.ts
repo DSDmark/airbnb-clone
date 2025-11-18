@@ -10,7 +10,6 @@ import {
   STATE_MIGRATIONS,
 } from "@/constants";
 // utils
-import { createPersistStorageUtil } from "@/utils";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 
