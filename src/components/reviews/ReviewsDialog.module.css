@@ -1,0 +1,120 @@
+.body {
+  padding: 0;
+}
+
+/* Tinted summary runs edge to edge, under the floating close button. */
+.summary {
+  padding: 72px 24px 20px;
+  background: var(--c-surface-hover);
+}
+
+.breakdown {
+  margin-top: 42px;
+}
+
+.plainTitle {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.content {
+  padding: 32px 24px 24px;
+}
+
+.mentionsTitle {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+}
+
+.content > :nth-child(2) {
+  margin-top: 22px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 26px;
+  padding-top: 24px;
+  border-top: 1px solid var(--c-border);
+}
+
+.count {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sort {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sort select {
+  height: 48px;
+  padding: 0 40px 0 16px;
+  border: 1px solid var(--c-border);
+  border-radius: 24px;
+  background: var(--c-surface);
+  color: var(--c-text);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  appearance: none;
+  cursor: pointer;
+}
+
+.sort select:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+.sort svg {
+  position: absolute;
+  right: 18px;
+  pointer-events: none;
+}
+
+.searchButton {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--c-border);
+  border-radius: 50%;
+}
+
+.searchButton:hover,
+.sort select:hover {
+  border-color: var(--c-text);
+}
+
+.search {
+  width: 200px;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--c-text);
+  border-radius: 24px;
+  font: inherit;
+  font-size: 14px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 24px;
+}
+
+.empty {
+  color: var(--c-text-secondary);
+}

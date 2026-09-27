@@ -1,0 +1,104 @@
+.band {
+  background: var(--c-surface-footer);
+}
+
+.inner {
+  max-width: calc(var(--page-max-width) + 2 * var(--page-gutter));
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+}
+
+.breadcrumbs {
+  border-top: 1px solid var(--c-border);
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 84px;
+}
+
+.crumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 8px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.crumb a {
+  text-decoration: none;
+}
+
+.crumb a:hover {
+  text-decoration: underline;
+}
+
+.explore {
+  padding: 32px 0 48px;
+  border-top: 1px solid var(--c-border);
+}
+
+.heading {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: -0.44px;
+}
+
+.nearby,
+.stays {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 8px;
+}
+
+.nearby {
+  row-gap: 24px;
+  margin-top: 32px;
+}
+
+.nearbyLink {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.nearbyTitle {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.nearbySubtitle {
+  color: var(--c-text-secondary);
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.subheading {
+  margin-top: 48px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.stays {
+  row-gap: 24px;
+  margin-top: 32px;
+}
+
+.stayLink {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+.nearbyLink:hover .nearbyTitle,
+.stayLink:hover {
+  text-decoration: underline;
+}

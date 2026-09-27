@@ -1,0 +1,35 @@
+.section {
+  padding: 32px 0;
+  border-top: 1px solid var(--c-border);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.item {
+  display: flex;
+  gap: 24px;
+}
+
+.icon {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 40px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.subtitle {
+  margin-top: 2px;
+  color: var(--c-text-secondary);
+  font-size: 14px;
+  line-height: 20px;
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev)",
+      "Bash(npm run build)",
+      "Bash(npm run lint:*)",
+      "Bash(npm run typecheck)",
+      "Bash(npm run check)",
+      "Bash(npm run test:e2e:*)",
+      "Bash(npm run visual:capture)",
+      "Bash(npm run visual:diff)",
+      "Bash(npm run measure:*)",
+      "Bash(npx playwright test:*)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(npx eslint:*)",
+      "Bash(node scripts/*:*)"
+    ],
+    "deny": [
+      "Bash(git push:*)",
+      "Bash(gh repo create:*)",
+      "Read(./.env*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/lint-changed.mjs\"",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}

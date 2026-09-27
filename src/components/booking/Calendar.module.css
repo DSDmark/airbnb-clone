@@ -1,0 +1,117 @@
+.calendar {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 294px);
+  justify-content: space-between;
+  gap: 27px;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-top: -6px;
+  border-radius: 50%;
+  transition: background-color 200ms var(--ease-standard);
+}
+
+.nav:hover:not(:disabled) {
+  background: var(--c-surface-hover);
+}
+
+.nav:disabled {
+  color: var(--c-text-disabled);
+  cursor: not-allowed;
+}
+
+.navPrev {
+  left: 5px;
+}
+
+.navNext {
+  right: 5px;
+}
+
+.monthTitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 42px);
+  margin-top: 23px;
+  color: var(--c-text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: center;
+}
+
+.grid {
+  margin-top: 12px;
+  border-collapse: separate;
+  border-spacing: 0 2px;
+}
+
+.grid td {
+  width: 42px;
+  height: 40px;
+  padding: 0;
+}
+
+.inRange,
+.rangeStart,
+.rangeEnd {
+  background: var(--c-surface-hover);
+}
+
+.rangeStart {
+  border-radius: 20px 0 0 20px;
+}
+
+.rangeEnd {
+  border-radius: 0 20px 20px 0;
+}
+
+.day {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  border: 1.5px solid transparent;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.day:hover:not(.past) {
+  border-color: var(--c-text);
+}
+
+.day:focus-visible {
+  box-shadow: none;
+  border-color: var(--c-text);
+  outline: 2px solid var(--c-text);
+  outline-offset: 1px;
+}
+
+.selected {
+  background: var(--c-text);
+  color: #ffffff;
+}
+
+.past {
+  color: var(--c-text-muted);
+  font-weight: 400;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}

@@ -1,0 +1,53 @@
+.section {
+  padding: 56px 0 48px;
+  border-top: 1px solid var(--c-border);
+}
+
+.plainHeading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: -0.52px;
+}
+
+.breakdown {
+  margin-top: 49px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--c-border-soft);
+}
+
+.mentions {
+  margin-top: 24px;
+}
+
+.mentionsTitle {
+  padding: 4px 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+}
+
+.mentions > :last-child {
+  margin-top: 0;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px -8px -40px;
+}
+
+.cell {
+  width: 41.666%;
+  margin-right: 8.333%;
+  margin-bottom: 40px;
+  padding: 0 8px;
+}
+
+.all {
+  margin-top: 32px;
+}

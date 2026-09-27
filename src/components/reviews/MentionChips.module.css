@@ -1,0 +1,95 @@
+/* Bleeds past its box so the chips' shadows aren't clipped by the scroller. */
+.carousel {
+  position: relative;
+  margin: -16px -4px -24px;
+}
+
+.scroller {
+  display: flex;
+  gap: 6px;
+  padding: 16px 4px 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 12px 18px 12px 14px;
+  border: 1px solid var(--c-surface-raised);
+  border-radius: 16px;
+  background: var(--c-surface);
+  box-shadow: var(--shadow-chip);
+  white-space: nowrap;
+  transition:
+    box-shadow 200ms var(--ease-standard),
+    transform 100ms var(--ease-standard),
+    border-color 300ms var(--ease-standard);
+}
+
+.chip:hover {
+  border-color: var(--c-border);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+/* The reference uses #8c8c8c (3.4:1); nudged to the lightest grey that
+   passes WCAG AA for 14px text. */
+.count {
+  margin-left: 4px;
+  color: #767676;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.arrow {
+  position: absolute;
+  top: 24px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: var(--c-surface-raised);
+  transition: transform 250ms var(--ease-standard), background-color 200ms var(--ease-standard);
+}
+
+.arrow:hover {
+  background: var(--c-surface-raised-hover);
+}
+
+.prev {
+  left: 4px;
+}
+
+.next {
+  right: 4px;
+}
+
+.small .chip {
+  height: 56px;
+  padding: 12px 16px 12px 14px;
+}
+
+.small .label,
+.small .count {
+  font-size: 12px;
+  line-height: 16px;
+}

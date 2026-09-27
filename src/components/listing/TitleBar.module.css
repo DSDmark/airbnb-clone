@@ -1,0 +1,22 @@
+.bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 22px;
+}
+
+.title {
+  padding: 2px 0;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 30px;
+  overflow-wrap: anywhere;
+}
+
+.actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 4px;
+  margin: 4px -8px 0 0;
+}

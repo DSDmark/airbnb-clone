@@ -1,0 +1,193 @@
+/* Single-photo viewer. The reference renders it on a light canvas; the colours
+   are variables so the dark Airbnb treatment is a one-line swap. */
+.root {
+  --lightbox-bg: #ffffff;
+  --lightbox-fg: var(--c-text);
+  --lightbox-control-hover: var(--c-surface-hover);
+  --lightbox-nav-border: rgba(34, 34, 34, 0.4);
+
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 100vw;
+  z-index: calc(var(--z-modal) + 1);
+  background: var(--lightbox-bg);
+  color: var(--lightbox-fg);
+  animation: lightboxIn 200ms var(--ease-standard) both;
+}
+
+.root[data-state="closing"] {
+  animation: lightboxOut 150ms var(--ease-standard) both;
+}
+
+.root:focus-visible {
+  box-shadow: none;
+}
+
+.toolbar {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 112px;
+  padding: 40px;
+}
+
+.close {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  transition:
+    background-color 200ms var(--ease-standard),
+    transform 100ms var(--ease-standard);
+}
+
+.close:hover {
+  background: var(--lightbox-control-hover);
+}
+
+.counter {
+  position: absolute;
+  top: 47px;
+  left: 50%;
+  font-size: 16px;
+  line-height: 20px;
+  transform: translateX(-50%);
+  font-variant-numeric: tabular-nums;
+}
+
+.actions {
+  position: absolute;
+  top: 49px;
+  right: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.stage {
+  position: absolute;
+  inset: 112px 96px;
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  object-fit: contain;
+}
+
+.full {
+  opacity: 0;
+  transition: opacity 200ms var(--ease-standard);
+}
+
+.full[data-loaded] {
+  opacity: 1;
+}
+
+.entering {
+  animation: imageIn 200ms var(--ease-standard) both;
+}
+
+.leaving {
+  animation: imageOut 200ms var(--ease-standard) both;
+}
+
+.caption {
+  position: absolute;
+  top: calc(100% + 24px);
+  left: 0;
+  right: 0;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-top: -24px;
+  border: 1px solid var(--lightbox-nav-border);
+  border-radius: 50%;
+  transition:
+    background-color 200ms var(--ease-standard),
+    opacity 200ms var(--ease-standard),
+    transform 250ms var(--ease-standard);
+}
+
+.nav:hover:not(:disabled) {
+  background: var(--lightbox-control-hover);
+}
+
+.nav:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.nav:disabled {
+  border-color: transparent;
+  opacity: 0.3;
+  cursor: default;
+}
+
+.prev {
+  left: 30px;
+}
+
+.next {
+  right: 30px;
+}
+
+.preload {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes lightboxIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lightboxOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes imageIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes imageOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

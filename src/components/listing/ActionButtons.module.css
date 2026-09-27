@@ -1,0 +1,53 @@
+.heart {
+  transition: fill 150ms var(--ease-standard), stroke 150ms var(--ease-standard);
+}
+
+.heartSaved {
+  fill: var(--c-brand) !important;
+  stroke: var(--c-brand) !important;
+  animation: heartPop 250ms var(--ease-standard);
+}
+
+/* 16px glyph with a 32px circular hit area (lightbox toolbar). */
+.iconButton {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  color: inherit;
+}
+
+.iconButton::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  transition: background-color 200ms var(--ease-standard);
+}
+
+.iconButton:hover::before {
+  background: var(--lightbox-control-hover, var(--c-surface-hover));
+}
+
+.iconButton > svg {
+  position: relative;
+}
+
+.iconButton:focus-visible {
+  box-shadow: none;
+}
+
+.iconButton:focus-visible::before {
+  box-shadow: var(--focus-ring);
+}
+
+@keyframes heartPop {
+  0% {
+    scale: 0.6;
+  }
+  100% {
+    scale: 1;
+  }
+}

@@ -1,0 +1,171 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--c-text);
+  opacity: 0.4;
+  animation: backdropIn 400ms var(--ease-overlay) both;
+}
+
+.root[data-state="closing"] .backdrop {
+  animation: backdropOut 250ms var(--ease-overlay) both;
+}
+
+.frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 40px;
+  pointer-events: none;
+}
+
+.panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 100%;
+  border-radius: 32px;
+  background: var(--c-surface);
+  box-shadow: var(--shadow-modal);
+  pointer-events: auto;
+  overflow: hidden;
+  animation:
+    sheetIn var(--duration-sheet) var(--ease-sheet) both,
+    fadeIn 75ms linear both;
+}
+
+.root[data-state="closing"] .panel {
+  animation:
+    sheetOut 150ms cubic-bezier(0.4, 0, 1, 1) both,
+    fadeOut 75ms linear 75ms both;
+}
+
+.panel:focus-visible {
+  box-shadow: var(--shadow-modal);
+}
+
+.small {
+  max-width: 568px;
+}
+
+.medium {
+  max-width: 780px;
+}
+
+.large {
+  max-width: 720px;
+  height: 100%;
+  max-height: 800px;
+}
+
+.header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-start;
+  height: 72px;
+  padding: 24px 24px 0;
+}
+
+.headerEnd {
+  justify-content: flex-end;
+}
+
+.headerFloating {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.headerFloating > button {
+  pointer-events: auto;
+}
+
+.close {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin: -8px;
+  border-radius: 50%;
+  color: var(--c-text);
+  transition: background-color 200ms var(--ease-standard), transform 250ms var(--ease-standard);
+}
+
+.close:hover {
+  background: var(--c-surface-hover);
+}
+
+.close:active {
+  transform: scale(0.92);
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  padding: 0 24px 24px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+@keyframes backdropIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes backdropOut {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes sheetIn {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes sheetOut {
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

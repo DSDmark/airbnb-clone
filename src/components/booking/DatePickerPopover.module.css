@@ -1,0 +1,140 @@
+.panel {
+  position: absolute;
+  top: -24px;
+  right: -8px;
+  z-index: 5;
+  width: 661px;
+  padding: 24px 32px 16px;
+  border-radius: 16px;
+  background: var(--c-surface);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.heading {
+  width: 247px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: -0.44px;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: var(--c-text-secondary);
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 315px;
+  height: 56px;
+  border: 1px solid var(--c-border-input);
+  border-radius: 8px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 12px;
+  border-radius: 8px;
+}
+
+.field + .field {
+  border-left: 1px solid var(--c-border-input);
+  border-radius: 0 8px 8px 0;
+}
+
+.active {
+  box-shadow: inset 0 0 0 2px var(--c-text);
+}
+
+.idle {
+  background: var(--c-surface-hover);
+  color: var(--c-text-disabled);
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+
+.value {
+  margin-top: 2px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.placeholder {
+  color: var(--c-text-secondary);
+}
+
+.idle .placeholder,
+.idle .label {
+  color: #b0b0b0;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.keyboard {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-left: -6px;
+}
+
+.footerActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.clear {
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.clear:hover {
+  background: var(--c-surface-hover);
+  text-decoration: underline;
+}
+
+.close {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: var(--c-text);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  transition:
+    background-color 200ms var(--ease-standard),
+    transform 100ms var(--ease-standard);
+}
+
+.close:hover {
+  background: #000000;
+}

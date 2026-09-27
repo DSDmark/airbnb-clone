@@ -1,0 +1,88 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.score {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  height: 140px;
+}
+
+.laurel {
+  width: 87px;
+  height: 132px;
+  margin-top: 8px;
+  object-fit: contain;
+}
+
+.value {
+  font-size: 100px;
+  font-weight: 500;
+  line-height: 100px;
+  letter-spacing: -2px;
+}
+
+.title {
+  margin-top: 0;
+  padding: 4px 0;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: -0.44px;
+}
+
+.copy {
+  max-width: 330px;
+  margin-top: 0;
+  color: var(--c-text-secondary);
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.how {
+  margin-top: 10px;
+  color: var(--c-text-secondary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-decoration: underline;
+  border-radius: 4px;
+}
+
+.dialog .score {
+  height: auto;
+}
+
+.dialog .laurel {
+  width: 50px;
+  height: 76px;
+  margin-top: 0;
+}
+
+.dialog .value {
+  font-size: 72px;
+  line-height: 74px;
+  letter-spacing: -1px;
+}
+
+.dialog .title {
+  margin-top: 25px;
+  padding: 0;
+}
+
+.dialog .copy {
+  max-width: 254px;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.dialog .how {
+  margin-top: 7px;
+  font-size: 12px;
+  line-height: 16px;
+}

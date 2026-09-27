@@ -1,0 +1,62 @@
+.root {
+  position: relative;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 17px);
+  right: 0;
+  z-index: 2;
+  width: 265px;
+  padding: 12px 0;
+  border-radius: 12px;
+  background: var(--c-surface);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+}
+
+.item,
+.hostItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 24px;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+.item:hover,
+.hostItem:hover,
+.item:focus-visible,
+.hostItem:focus-visible {
+  background: var(--c-surface-hover);
+  box-shadow: none;
+}
+
+.hostItem {
+  justify-content: space-between;
+  gap: 16px;
+  padding: 4px 24px;
+}
+
+.hostCopy {
+  display: flex;
+  flex-direction: column;
+}
+
+.hostTitle {
+  font-weight: 500;
+}
+
+.hostSubtitle {
+  color: var(--c-text-secondary);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.rule {
+  height: 1px;
+  margin: 8px 24px;
+  border: 0;
+  background: var(--c-border);
+}

@@ -1,0 +1,12 @@
+.stars {
+  display: inline-flex;
+  align-items: center;
+}
+
+.on {
+  color: var(--c-text);
+}
+
+.off {
+  color: var(--c-border);
+}

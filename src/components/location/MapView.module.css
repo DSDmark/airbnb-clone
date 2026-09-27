@@ -1,0 +1,172 @@
+.frame {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #e5e3df;
+  isolation: isolate;
+}
+
+.fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  height: auto;
+  border-radius: 0;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Oversized up/left so the embed's own "Open in Maps" chip is cropped away;
+   Google's logo and terms along the bottom edge stay visible. */
+.embed {
+  position: absolute;
+  top: -44px;
+  left: -10px;
+  width: calc(100% + 10px);
+  height: calc(100% + 44px);
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms var(--ease-standard);
+}
+
+.embedReady {
+  opacity: 1;
+}
+
+/* The embed is oversized, so its centre (the listing) sits 22px up, 5px left. */
+.marker {
+  position: absolute;
+  top: calc(50% - 22px);
+  left: calc(50% - 5px);
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
+  border-radius: 50%;
+  background: var(--c-text);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  color: #ffffff;
+}
+
+.search {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  width: 360px;
+  height: 48px;
+  padding: 0 20px;
+  border-radius: 100px;
+  background: var(--c-surface);
+  box-shadow: var(--shadow-floating);
+  cursor: text;
+}
+
+.searchIcon {
+  flex-shrink: 0;
+  color: var(--c-text-secondary);
+}
+
+.searchInput {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  margin-left: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--c-text);
+  font: inherit;
+  font-size: 16px;
+  outline: none;
+}
+
+.search:focus-within {
+  box-shadow: var(--shadow-floating), 0 0 0 2px var(--c-text);
+}
+
+.hint {
+  position: absolute;
+  left: 40px;
+  color: var(--c-text-secondary);
+  font-size: 16px;
+  line-height: 20px;
+  pointer-events: none;
+  animation: hintIn 400ms var(--ease-standard) both;
+}
+
+.controls {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.control {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--c-surface);
+  box-shadow: var(--shadow-raised);
+  transition: transform 250ms var(--ease-standard);
+}
+
+.control:active,
+.zoomButton:active {
+  transform: scale(0.92);
+}
+
+.zoom {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.925);
+  box-shadow: var(--shadow-raised);
+}
+
+.zoomButton:disabled {
+  color: var(--c-text-disabled);
+  cursor: not-allowed;
+}
+
+.zoomButton {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  transition: transform 250ms var(--ease-standard);
+}
+
+.control:focus-visible,
+.zoomButton:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+@keyframes hintIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

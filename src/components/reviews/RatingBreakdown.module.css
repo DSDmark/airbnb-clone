@@ -1,0 +1,74 @@
+.row,
+.compact {
+  display: grid;
+  grid-template-columns: 170px repeat(6, minmax(0, 1fr));
+}
+
+.compact {
+  grid-template-columns: 124px repeat(6, max-content);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.overall {
+  padding-right: 32px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.bars {
+  margin-top: 8px;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 12px;
+  color: var(--c-text-secondary);
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.barLabel {
+  width: 6px;
+}
+
+.track {
+  position: relative;
+  flex: 1;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--c-border);
+}
+
+.fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--c-text);
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 84px;
+  padding: 0 24px 4px;
+  border-left: 1px solid var(--c-border);
+}
+
+.categoryText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.compact .category {
+  padding: 0 16px 4px;
+  min-width: 104px;
+}

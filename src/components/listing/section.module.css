@@ -1,0 +1,23 @@
+/* Shared rhythm for listing sections: hairline on top, 48px breathing room. */
+.section {
+  padding: 48px 0;
+  border-top: 1px solid var(--c-border);
+}
+
+.heading {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: -0.44px;
+}
+
+.subheading {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+}
+
+.secondaryText {
+  color: var(--c-text-secondary);
+}

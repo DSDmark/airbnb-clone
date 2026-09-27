@@ -1,0 +1,26 @@
+.main:focus-visible {
+  box-shadow: none;
+}
+
+.page {
+  max-width: calc(var(--page-max-width) + 2 * var(--page-gutter));
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+}
+
+/* 7/12 content, 1/12 gutter, 4/12 booking column — as on the reference. */
+.columns {
+  display: flex;
+  align-items: stretch;
+  margin-top: 32px;
+}
+
+.content {
+  width: 58.333%;
+  min-width: 0;
+}
+
+.sidebar {
+  width: 33.333%;
+  margin-left: 8.333%;
+}
